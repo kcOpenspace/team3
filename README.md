@@ -6,7 +6,6 @@ Login same as team email
 
 Team E-email: (For testing puposes)
 codemaster.team3@gmail.com
-pass: Betachad1
 
 
 Version information updated below:
