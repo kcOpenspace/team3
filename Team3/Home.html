@@ -1,40 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Team 3 Home</title>
+   <title>Team Three | Home</title>
    <link rel="stylesheet" href="stylesheet.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+   <script src="scripts.js"></script>
 </head>
 
 <body>
    <div class="nav-container">
       <nav class="navigation">
          <ul>
-            <li class="logo"><a href="#">Logo</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="About.html">About Us</a></li>
-            <li><a href="Catalogue.html">Catalogue</a></li>
-            <li class="icon"><a href="#"><i class="fas fa-user"></i></a></li>
-            <li class="icon"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-            <li class="icon"><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
-         </ul> 
+            <li class="logo"><a href="Landing Page.html"> <img src="Images/teamthree.png" alt="" /></a></li>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Stores.html">Stores</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <div class="dropdown">
+               <li class="dropbtn">Catalouge
+                  <i class="fa fa-caret-down"></i>
+               </li>
+               <div class="dropdown-content">
+                  <a href="mens.html">Mens Clothing</a>
+                  <a href="womens.html">Womens Clothing</a>
+               </div>
+            </div>
+            <li class="icon"><a href="#"><i class="fas fa-search"></i></a></li>
+            <li class="icon"><a href="Cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+         </ul>
       </nav>
    </div>
 
-   <main class="sale-container">
-    <banner class="about">
-        <p>sale / testing sale / testing sale / testing sale / testing sale / testing</p>
-    </banner>
+   <main>
+      <div class="banner">
+         <img src="Images/black friday sale.jpg" alt="">
+      </div>
+
+      <div class="article-container">
+         <article class="shop-mens">
+            <img src="images/shop mens.jpg" alt="">
+            <a href="mens.html">Mens Clothing</a>
+         </article>
+
+         <article class="shop-womens">
+            <img src="images/Webp.net-resizeimage.jpg" alt="">
+            <a href="womens.html">Womens Clothing</a>
+         </article>
+      </div>
+
    </main>
 
 
-<footer>
-    <nav class="footer-nav"></nav>
-</footer>
+   <footer class="footer-container">
+ 
+      <div class="footer-left">
+       <img src="Images/teamthree.png">
+         <p class="footer-links">
+            <a href="Shipping.html">Shipping & Returns</a>
+            |
+            <a href="#">Blog</a>
+         </p>
+
+         <p class="footer-company-name">Team Three - Eddie & Ken</p>
+      </div>
+
+      <div class="footer-center">
+         <div>
+            <i class="fa fa-map-marker"></i>
+              <p><span>278 Barker Rd, Subiaco WA 6008</span></p>
+         </div>
+
+         <div id="contact">
+            <i class="fa fa-phone"></i>
+            <p>1300 663 228</p>
+         </div>
+         <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:codemaster.team3@gmail.com">codemaster.team3@gmail.com</a></p>
+         </div>
+      </div>
+      <div class="footer-right">
+         <p class="footer-company-about">
+            <span>About the company</span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+         <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+         </div>
+      </div>
+   </footer>
 
 </body>
+
+
 </html>
