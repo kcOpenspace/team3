@@ -1,15 +1,33 @@
 * {
     max-width: 1200px;
-    margin: 0 auto;
-    box-sizing: border-box;
  }
  
  body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    padding: 0;
+    width: 100%;
  }
 
  /* Nav Bar */
+
+ /* Header LOGO */
+ .logo {
+   height: 59px;
+   width: 200px;
+   overflow: hidden;
+}
+.logo a {
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+ .logo img{
+    width: 100%;
+   object-fit: cover;
+   transform: translateY(-70px);
+}
 
 a {
    color: white;
@@ -28,11 +46,13 @@ a:hover {
 }
 
 .nav-container{
-   padding: 0 1em 1em;
+   padding: 0 auto;
+   margin: 0 auto;
+   width: 100%;
+   border: 1px solid black;
 }
 
 .navigation ul {
-   border: 1px solid black;
    list-style: none;
    margin: 0;
    padding: 0;
@@ -52,7 +72,7 @@ a:hover {
 .sale-container{
     display: flex;
     align-content: center;
-    padding: 200px 1em 1em;
+    /* padding: 200px 1em 1em; */
 }
 
 /* Media Queries */

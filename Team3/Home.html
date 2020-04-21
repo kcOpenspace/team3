@@ -5,7 +5,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Team 3 Home</title>
-   <link rel="stylesheet" href="stylesheet.css">
+   <link rel="stylesheet" href="css/stylesheet.css">
+   <link rel="stylesheet" href="css/cart.css">
+   <link rel="stylesheet" href="css/catalogue.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
@@ -14,16 +16,34 @@
    <div class="nav-container">
       <nav class="navigation">
          <ul>
-            <li class="logo"><a href="#">Logo</a></li>
+            <div class="logo"><a href="Home.html"><img src="img/team3-logo.png"></a></div>
             <li><a href="#">Home</a></li>
             <li><a href="About.html">About Us</a></li>
             <li><a href="Catalogue.html">Catalogue</a></li>
             <li class="icon"><a href="#"><i class="fas fa-user"></i></a></li>
-            <li class="icon"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            <li class="icon">
+               <a id="cart-icon" onclick="showCart()"><i class="fas fa-shopping-cart"></i></a>
+               <ul class="mini-cart-container">
+                  <h3>Shopping Cart</h3>
+                  <table class="mini-cart-table">
+                     <tr class="cart-table-data"></tr>
+                  </table>
+                  <!-- <ul class="mini-cart-list">
+                     <li class="mini-cart-list-item">Product 1</li>
+                     <li class="mini-cart-list-item">Product 2</li>
+                     <li class="mini-cart-list-item">Product 3</li>
+                  </ul> -->
+                  <input id="view-cart-btn" type="button" value="View Cart">
+                  <input id="checkout-btn" type="button" value="Checkout">
+               </ul>
+            </li>
+      
             <li class="icon"><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
          </ul> 
       </nav>
    </div>
+
+
 
    <main class="sale-container">
     <banner class="about">
@@ -31,10 +51,45 @@
     </banner>
    </main>
 
+   <section class="product-container">
+      <div class="product-catalogue">
+         <div class="product-grid">
+            <div class="prod-grid-item">
+               <div class="product" id="p1">
+                  <img id="prod-img" src="../catalogue/mens/s-l1600.jpg">
+                  <p id="product-name">green shirt</p>
+                  <p id="product-cat">mens</p>
+                  <p id="product-price">$20</p>
+               </div>
+               <input  type="button" value="Add to Cart" id="btn-addcart" class="btn1" data-name="green-shirt" data-price="$20" onclick="addToCart()">
+            </div>
+            <div class="prod-grid-item">
+               <div class="product" id="p2">
+                  <img id="prod-img" src="../catalogue/mens/pants/s-l1600.jpg">
+                  <p id="product-name">Black Joggers</p>
+                  <p id="product-cat">mens</p>
+                  <p id="product-price">$15</p>
+               </div>
+               <input class="btn1" type="button" value="Add to Cart" id="btn-addcart" data-name="black-joggers" data-price="$15" onclick="addToCart()">
+            </div>
+            <div class="prod-grid-item">
+               <div class="product" id="p3">
+                  <img id="prod-img" src="../catalogue/womens/s-l1600 (1).jpg">
+                  <p id="product-name">Blue Flower dress</p>
+                  <p id="product-cat">womens</p>
+                  <p id="product-price">$14.99</p>
+               </div>
+               <input class="btn1" type="button" value="Add to Cart" id="btn-addcart" data-name="blue-dress" data-price="$14.99" onclick="addToCart()">
+            </div>
+         </div>
+      </div>
+   </section>
+
 
 <footer>
     <nav class="footer-nav"></nav>
 </footer>
 
+<script src="js/mini-cart.js"></script>
 </body>
 </html>
