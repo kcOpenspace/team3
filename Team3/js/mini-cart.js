@@ -139,7 +139,6 @@ function displayCart() {
     cartTable.append(tablePrice);
     cartTable.append(tableQty);
     
-    
     // CREATE EMTPY TABLE AND UPDATES ROWS WITH TABLE DATA 
     for(var i=0; i<cartArray.length; i++){
         
