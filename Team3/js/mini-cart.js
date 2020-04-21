@@ -13,7 +13,6 @@ function showCart(){
 }
 
 
-
 // SHOPPING CART
 function shoppingCart() {
 // cart : Array
@@ -28,9 +27,7 @@ function shoppingCart() {
 // addItemToCart : Function
     var cart_obj = {};
 
-    //Add to cart object
-    // cart_obj.addItemToCart = function(name,price,count) 
-    
+    //Add to cart object and cart array   
     cart_obj.addItemToCart = function(name,price,count) {
 
         //CHECK IF ITEM IS AN EXISTING ITEM IN TEH CART
@@ -53,7 +50,7 @@ function shoppingCart() {
         }
     }
 
-//SET COUNT FROM ITEMS
+//SET COUNT FROM ITEMS :UNUSED
     cart_obj.setCountItem = function(name,count) {
         for(var i=0; i<cart.length; i++) {
             if(cart[i].name === name){ 
@@ -63,7 +60,34 @@ function shoppingCart() {
         }
     }
 
-//REMOVE ITEM FROM CART
+    //TOTAL CART ITEMS
+    cart_obj.totalCartItems = function() {
+        var totalItems = 0;
+        //For Every Item in cart Get the count and add them together
+        for(var i=0; i<cart.length; i++) {
+            var itemCount = cart[i].count;
+            totalItems = totalItems + itemCount;
+        }
+        return totalItems;
+    }
+
+    //TOTAL PRICE OF CART
+    cart_obj.totalCartPrice = function() {
+        var totalPrice = 0;
+        //For Every Item in cart Get the count and add them together
+        for(var i=0; i<cart.length; i++) {
+            var itemCount = cart[i].count;
+            var itemPrice = cart[i].price;
+            var price = itemPrice.replace('$','');
+            
+            totalPrice = totalPrice + price*itemCount;
+        }
+        //Fixed deciaml places to 2
+        return Number(totalPrice.toFixed(2));
+    }
+
+
+//REMOVE ITEM FROM CART  :UNUSED
     cart_obj.removeItemFromCart = function(name) {
         for(var item in cart) {
             if(cart[item].name === name) {
@@ -104,9 +128,9 @@ function addToCart() {
     //ONCLICK TO ADD PRODUCT TO MINI CART
     //Add Product info 
     var btn = document.getElementsByClassName('btn1');
+    var product = document.getElementsByClassName('product');
     //onclick event listener
     for(var i=0; i<btn.length; i++){
-        // btn[i].addEventListener('click', function(){
         btn[i].onclick = function() {     
             //BTN DATA
             var name = this.getAttribute("data-name");
@@ -122,7 +146,6 @@ function addToCart() {
 function displayCart() {
     var cartArray = cart1.listCart();
     //MINI CART Auto Populate Table items with product info
-    console.log(cartArray);
     var cartTable = document.querySelector('.mini-cart-table');
     cartTable.innerHTML = "";
 
@@ -157,7 +180,54 @@ function displayCart() {
         tableRow.appendChild(tableCell3);
         
         cartTable.appendChild(tableRow); 
+
     }
+
+    //CREATE CART TABLE TOTALS 
+    var totalHead = document.createElement('th');
+    var totalRow = document.createElement('tr');
+    var totalCell = document.createElement('td');
+    var totalCell2 = document.createElement('td');
+    var totalCell3 = document.createElement('td');
+
+    //TOTAL CART ITEMS
+    var totalCount = cart1.totalCartItems();
+
+    totalCell.innerText = 'Total QTY: ';
+    totalCell2.innerText = totalCount;
+    totalCell3.innerText = 'Qty';
+
+    totalRow.append(totalHead);
+    totalHead.append(totalCell);
+    totalHead.append(totalCell2);
+    totalHead.append(totalCell3);
+    
+    cartTable.append(totalHead);
+    cartTable.append(totalRow);
+ 
+    //TOTAL CART PRICE
+    var totalHead2 = document.createElement('th');
+    var totalRow2 = document.createElement('tr');
+    var totalprice = document.createElement('td');
+    var totalprice2 = document.createElement('td');
+    var totalprice3 = document.createElement('td');
+
+    //TOTAL CART ITEMS
+    var totalPrice = cart1.totalCartPrice();
+
+    totalprice.innerText = 'Cart-Total: ';
+    totalprice2.innerText = '$';
+    totalprice3.innerText = totalPrice;
+
+    totalRow2.append(totalHead2);
+    totalRow2.append(totalprice);
+    totalRow2.append(totalprice2);
+    totalRow2.append(totalprice3);
+    
+    cartTable.append(totalHead2);
+    cartTable.append(totalRow2);
+
+
     
 }
 
