@@ -24,6 +24,20 @@ function shoppingCart() {
         this.count = count
     }
 
+    // var sessionStorage = 
+    //SAVE CART IN THSI SESSION STORAGE
+    function saveCart() {
+        sessionStorage.setItem('minicart',JSON.stringify(cart));
+    }
+
+    //LOAD SAVED CART
+    function loadCart() {
+        cart = JSON.parse(sessionStorage.getItem('minicart'));
+    } 
+    if (sessionStorage.getItem('minicart') != null) {
+        loadCart();
+    }
+
 // addItemToCart : Function
     var cart_obj = {};
 
@@ -41,12 +55,14 @@ function shoppingCart() {
         }
 
         //IF NEW ITEM IS AN EXISTING ITEM THEN INCREMENT THE COUNT
-        if (existingItem !== null) {
+        if (existingItem != null) {
             existingItem.count++;
+            saveCart();
         } 
         else {
             var item = new Item(name,price,count);
             cart.push(item);
+            saveCart();
         }
     }
 
@@ -98,6 +114,11 @@ function shoppingCart() {
             break;
             }
         }   
+    }
+
+    //Clears the cart and restart as an emtpy array
+    cart_obj.clearCart = function(){
+        cart = [];
     }
 
 // listCart : Function

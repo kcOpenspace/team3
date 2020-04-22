@@ -1,0 +1,89 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh11420\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+Program Parameters\
+\
+-Each Time add item. Add it to the Cart \
+-IF Item is already in the cart. Only update the count\
+-Create a copy of the cart to display.\
+-Output Contents of cart to the cart table.\
+\
+\
+TOTAL CART PRICE:::\
+var totalPrice\
+\
+for each item in Cart\
+	get item count\
+	get item price\
+	total price =+ price*count\
+\
+return totalPrice\
+\
+PROBLEM:::  RESTARTS EVERY NEW ITEM \
+SOLVED:: SAME FIX AS CARTITEMS     totalPrice = totalPrice + price*count\
+\
+\
+TOTALCART ITEMS COUNT:::\
+var totalItems\
+\
+For each Item in CART \
+	itemCount = cart[i].count\
+	totalItems = totalItems + itemCount\
+\
+RETURN totalItems\
+\
+PROBLEM ::::  The count reinitiates count only in the current array item object and stays that way but increments the count of that object only.\
+SOLVED::: THE increment =+ did not function as it was supposed to so had to resort to \
+totalItems = totalItems + itemCount which solved the issue of it restarting count on each item\
+\
+\
+\
+ADDITEM TO CART::::::::\
+object item = new object of Item(name, price, count)\
+\
+ for each item in cartarray\
+	if each cart array item name == object item name \
+		then cart array item count ++\
+		return cart array item count;\
+		Exit loop\
+\
+push new item object to cart array\
+\
+\
+cart array: [item(0) ; item(1); item(2)]\
+\
+PROBLEM::: once Cart array is full eg. all 3 products in array. the loop stops on last item.\
+IS NOT THE PROBLEM\
+\
+CART ARRAY : is Shopping Cart => Contains one object of all shopping items :: \
+			IS DOING WHAT IT IS SUPPOSED TO DO\
+\
+PROBLEM: THE CART_OBJECT MAYBE THE PROBLEM WHEN CONSTRUCTING THE LIST TO DISPLAY\
+\
+ListCart :::   Creates a Copy of Cart by copying individual item objects in the CART\
+\
+empty cartCopy array\
+empty itemCopy object\
+\
+For each item object in CART ARRAY\
+	object item = Cart Item Object\
+	object itemCopy = the item object\
+\
+	everytime copy item remove duplicates\
+	item1: \{name, price,count) \
+	item2: \{name,$10,2\}\
+	Same item.name as cart[i].name\
+	Remove item1\
+	item2: \{name,$10,2\}\
+	\
+	\
+	push the itemCopy into the cartCopy array\
+\
+RETURN cartCopy Array \
+\
+DIsplayCart function calls this cartCopy array to transfer to table data}
