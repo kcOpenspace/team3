@@ -1,15 +1,23 @@
 
 //Show or close mini cart
 function showCart(){
+    var cartIcon = document.getElementById('cart-icon');
     var minicart = document.querySelector(".mini-cart-container");
     
-    if(minicart.style.visibility === 'hidden'){
-        minicart.style.visibility = 'visible';
-    }
-    else {
-        minicart.style.visibility = 'hidden';
-    }
+    cartIcon.onclick = function() {
+        if(minicart.style.visibility === 'hidden'){
+            minicart.style.visibility = 'visible';
+        }
+        else {
+            minicart.style.visibility = 'hidden';
+        }
+    
+        //LOAD CART SESSION 
+        cart1.loadCart();
+        cart1.displayCart();
 
+        //ONCLICK CART ICON:: LOADS THE CART ITEMS FROM CART AND DISPLAY THE CART ITEMS
+    }
 }
 
 
@@ -247,12 +255,10 @@ function displayCart() {
     
     cartTable.append(totalHead2);
     cartTable.append(totalRow2);
-
-
     
 }
 
-
+displayCart();
     
     
 
