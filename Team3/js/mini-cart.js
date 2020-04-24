@@ -217,19 +217,16 @@ function displayCart() {
     var totalRow = document.createElement('tr');
     var totalCell = document.createElement('td');
     var totalCell2 = document.createElement('td');
-    var totalCell3 = document.createElement('td');
 
     //TOTAL CART ITEMS
     var totalCount = cart1.totalCartItems();
 
     totalCell.innerText = 'Total QTY: ';
     totalCell2.innerText = totalCount;
-    totalCell3.innerText = 'Qty';
 
     totalRow.append(totalHead);
     totalHead.append(totalCell);
     totalHead.append(totalCell2);
-    totalHead.append(totalCell3);
     
     cartTable.append(totalHead);
     cartTable.append(totalRow);
