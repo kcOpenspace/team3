@@ -1,0 +1,141 @@
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap);
+
+* {
+    font-family: 'Roboto', 'sans-serif';
+}
+
+
+.order-content {
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 65% 34%;
+    grid-template-rows: 100%;
+    grid-gap: 1px;
+}
+
+/* SUMMARY OF COSTS  */
+.order-content .summary-container {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 90%;
+    margin-left: 20px;
+}
+
+.summary-container h1 {
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.summary {
+    text-align: left;
+    line-height: 1.8em;
+}
+
+.summary div {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.summary div p:first-child {
+    padding-right: 15px;
+    width: 65%;
+    text-align: left;
+}
+
+.summary div p {
+    width: 30%;
+    text-align: left;
+}
+
+.summary div:last-child {
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    width: 100%;
+}
+
+.btn-checkout, .btn-paypal {
+    width: 80%;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    
+    font-size: 1.1em;
+}
+
+.btn-checkout {
+    color: #fff;
+    background-color: black;
+}
+
+
+/* ORDER ITEM TABLE AREA */
+.order-content .order-container {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    padding: 0 10px;
+
+}
+
+.order-container h1 {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.order-table {
+    width: 100%;
+}
+
+.order-row {
+    width: 100%;
+    height: 200px;
+    padding: 10px 0;
+    border-bottom: 2px solid black;
+}
+
+.item-details {
+    height: 100%;
+}
+
+.item-details p:nth-child(1) {
+    font-size: 1.3em;
+}
+
+.item-price {
+    padding-right: 10px;
+    font-size: 1.1em;
+}
+
+.thumbnail-box {
+    width: 150px;
+}
+
+.thumbnail-box img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.item-qty {
+    height: 100%;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.item-qty p button {
+    padding: 0;
+    margin: 0 10px;
+}
+
+.item-qty p button i {
+    font-size: 1.4em;
+}
+
