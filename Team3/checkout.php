@@ -83,7 +83,7 @@
          <div class="col-25">
             <div class="container">
                <h4>Cart <span class="price" style="color:black">
-               <p>Total <span class="price" style="color:black"><b>$****</b></span></p>
+               <p>Total <span class="price" style="color:black" id="total"></span></p>
             </div>
          </div>
       </div>

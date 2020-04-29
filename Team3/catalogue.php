@@ -48,7 +48,8 @@
     $row = mysqli_fetch_array($result);
 
     // FOR EACH ROW IN TABLE, FETCH THE PRODUCT DETAILS AND CREATE PRODUCT GRID ITEM
-    while ($row = mysqli_fetch_array($result)) {    
+    while ($row = mysqli_fetch_array($result)) { 
+        $product_id = $row['product_id'];   
         $product_name = $row['product_name'];
         $product_cat = $row['product_cat'];
         $product_price = $row['product_price'];
@@ -56,13 +57,13 @@
     ?>
     <!-- Each Product Populate a new Grid Item in catalogue -->
         <div class="prod-grid-item">
-            <div class="product">
+            <div class="product" id="<?php echo $product_id ?>">
                 <img id="prod-img" src="/../<?php echo $product_image;?>">
                 <p id="product-name"><?php echo $product_name ?></p>
                 <p id="product-cat"><?php echo $product_cat ?></p>
                 <p id="product-price"><?php echo $product_price ?></p>
             </div>
-            <input  type="button" value="Add to Cart" id="btn-addcart" class="btn1" data-name="<?php echo $product_name ?>" data-price="<?php echo $product_price ?>" onclick="addToCart()">
+            <input  type="button" value="Add to Cart" id="btn-addcart" class="btn1" data-id="<?php echo $product_id ?>" data-name="<?php echo $product_name ?>" data-price="<?php echo $product_price ?>" data-img="/..<?php echo $product_image?>" onclick="addToCart()">
        </div>
     <?php
     }
